@@ -2,6 +2,9 @@ NAME = fdf
 SRC = src/main.c \
 	  get_next_line/get_next_line.c \
 	  src/drawline.c \
+	  src/key_hooks.c \
+	  src/get_info_map.c \
+	  src/data.c \
 	  src/render.c
 
 LIB	= get_next_line/libft/libft.a
@@ -22,6 +25,7 @@ $(NAME): $(OBJ)
 
 clean:
 	rm -f $(OBJ)
+	@make -C get_next_line/libft/ clean
 fclean: clean
 	rm -f $(NAME)
 re:	fclean all
